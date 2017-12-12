@@ -6,16 +6,32 @@
 div.home {
   height: 100vh;
   width: 100vw;
-  background-color: black;
-  color: white;
-  display: flex;
-  justify-content: center;
+  background-color: white;
+  color: black;
+}
+
+div.home div.img_index {
+  margin-top: 30px;
+  margin-left: 30px;
+}
+
+div.home div.img_index img {
+  height: 100px;
+  width: 100px;
 }
 
 div.home .entry_button {
   position: fixed !important;
-  top: 63% !important;
+  top: 70% !important;
   left: 46% !important;
+}
+
+div.home .entry_button button {
+  height: 40px;
+  width: 60px;
+  border-radius: 5px;
+  border: 0;
+  box-shadow: 4px 5px gray;
 }
 
 div.nav {
