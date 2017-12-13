@@ -10,14 +10,11 @@ div.home {
   color: black;
 }
 
-div.home div.img_index {
-  margin-top: 30px;
-  margin-left: 30px;
-}
-
 div.home div.img_index img {
   height: 100px;
   width: 100px;
+  margin-top: 30px;
+  margin-left: 30px;
 }
 
 div.home .entry_button {
