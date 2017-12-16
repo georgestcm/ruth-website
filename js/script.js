@@ -5,8 +5,8 @@ $(function(){
   var $navLinks = $("a.nav_link");
   var $divGallery = $('div.gallery_section');
   var $divAbout = $('div.About_section');
-  var $divComtact = $('div.contact_section');
-
+  var $divContact = $('div.contact_section');
+ var $nav_link_wrapper = $('div.nav_link_wrapper');
 
   $entryBtn.on('click',function() {
     $entryBtn.hide();
@@ -20,6 +20,14 @@ $(function(){
 
 $navLinks.hide().fadeIn("slow");
 // hides the nav text and then animates it
+
+$nav_link_wrapper.children('.first').on('click',function(e) {
+  e.preventDefault();
+  $divAbout.hide().fadeIn('slow');
+})
+
+$divGallery.hide();
+$divContact.hide();
 
 
 
