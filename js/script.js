@@ -3,6 +3,10 @@ $(function(){
   var $entryBtn = $('button#entry_btn');
   var $img = $("div.img_index");
   var $navLinks = $("a.nav_link");
+  var $divGallery = $('div.gallery_section');
+  var $divAbout = $('div.About_section');
+  var $divComtact = $('div.contact_section');
+
 
   $entryBtn.on('click',function() {
     $entryBtn.hide();
@@ -16,5 +20,7 @@ $(function(){
 
 $navLinks.hide().fadeIn("slow");
 // hides the nav text and then animates it
+
+
 
 })
