@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="module">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,9 +8,9 @@
   <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
   <link rel="icon" href="images/icon.png">
   <link rel="stylesheet" href="css/main.css">
-  <script src= "js/jquery-3.2.1.min.js">
-
-  </script>
+  <script src= "js/jquery-3.2.1.min.js"></script>
+  <script src="js/typeit.min.js"></script>
+  <script src="js/angular.min.js"></script>
 </head>
 <body>
   <div class="nav">
@@ -38,19 +38,18 @@
 </div>
 
 <div class="About_section">
-  <h2>
-   animated name
+  <h2 class="name">
+     Ruth <em> Ajeboye </em>
   </h2>
-  <div>
+  <div class="about_section_main">
     <p>
-          My name is Ruth Aj and I am a New York-based photographer.
-   My gallery is a representation of the art I find in everything - everyday people, nature, you name, I find art in it.
-    My goal is to tell stories through the images I capture. I aim to always capture the narrative an image exudes in its rarest form. <br>
+    My name is Ruth Aj and I am a New York-based photographer.
+    My gallery is a representation of the art I find in everything - everyday people, nature, you name, I find art in it.
+    My goal is to tell stories through the images I capture. I aim to always capture the narrative an image exudes in its rarest form.
     If you're interested to have me capture your narrative,
     feel free to message me so we can set up a photo shoot.
-
-</p>
-<img src="images/ruthPicture.JPG" alt="ruths picture" class="half-width">
+   </p>
+   <img src="images/ruthPicture.JPG" alt="ruths picture" class="half-width">
 </div>
 </div>
 
@@ -59,8 +58,9 @@
 </div>
 
 <div class="photo_viewer">
-
-
+   <div class="exit_img">
+      <img src="images/cancel.png" alt="exit">
+   </div>
 </div>
 <script src="js/script.js">
 
