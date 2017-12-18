@@ -34,7 +34,7 @@ $photoViewer.hide();
 
 $nav_link_wrapper.children('.first').on('click',function(e) {
   e.preventDefault();
-  $divAbout.hide().fadeIn('slow');
+  $divAbout.fadeIn();
   $divGallery.hide();
   $divContact.hide();
 
@@ -44,7 +44,7 @@ $nav_link_wrapper.children('.second').on('click',function(e) {
   e.preventDefault();
   $divAbout.hide();
   $divContact.hide();
-  $divGallery.show();
+  $divGallery.fadeIn();
 
 })
 
@@ -52,7 +52,7 @@ $nav_link_wrapper.children('.third').on('click',function(e) {
   e.preventDefault();
   $divAbout.hide();
   $divGallery.hide();
-  $divContact.show();
+  $divContact.fadeIn();
 })
 //above are the nav control "what hides or show depending on what link is clicked"
 
