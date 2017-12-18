@@ -104,21 +104,55 @@ img[src="images/cancel.png"] {
 
 div.gallery_section {
   position: relative;
-  top: 200px;
+  top: 170px;
 
 }
 
+div.gallary_header  {
+  color: gray;
+  font-size: 26px;
+  position: fixed;
+  left: 43%;
 
 
+}
 
+.gallery_section_body li {
+  margin: 118px 20px 0 0;
+  box-sizing: border-box;
+  height: 200px;
+  width: 200px;
+  display: inline-block;
+  position: relative;
+  left: 19%;
+  border-radius: 7px;
+  cursor: pointer;
+}
 
+.gallery_section_body li:nth-child(2) {
 
+  background: url('../images/flower.png');
+    background-position: center;
+}
 
+.gallery_section_body li:nth-child(3) {
+  background: url('../images/sky.png');
+    background-position: center;
 
+}
 
+.gallery_section_body li:nth-child(1) {
+  background: url('../images/city.png');
+    background-position: center;
+}
 
+.gallery_section_body li:nth-child(4) {
+  background: url('../images/plus.png');
+  background-repeat: no-repeat;
+    background-position: center;
+    background-color: gray;
 
-
+}
 
 
 div.photo_viewer {
