@@ -3,7 +3,19 @@
   padding: 0;
 }
 
+.unset {
+  position: unset !important;
+  display: flex;
+  justify-content: center;
+}
 
+.imgSize {
+  box-sizing: border-box;
+  height: 220px;
+  width: 200px;
+  margin: 0 16px 16px 0;
+
+}
 
 div.home {
   height: 100vh;
@@ -159,6 +171,11 @@ div.photo_viewer {
   position: fixed;
   bottom: 0;
   width: 100vw;
+}
+
+div.photo_viewer_body {
+
+
 }
 
 div.exit_img {

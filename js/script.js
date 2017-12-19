@@ -9,9 +9,10 @@ $(function(){
   var $nav_link_wrapper = $('div.nav_link_wrapper');
   var $name = $('div.entry_text');
   var $photoViewer = $('div.photo_viewer');
-  var $li = $('.gallery_section_list');
+  var $liParent = $('.gallery_section_body');
   var $exitImg = $('div.exit_img');
   var $body = $('body');
+  var $galleryBody = $('div.photo_viewer_body');
 
   $entryBtn.on('click',function() {
     $entryBtn.hide();
@@ -57,36 +58,69 @@ $nav_link_wrapper.children('.third').on('click',function(e) {
 //above are the nav control "what hides or show depending on what link is clicked"
 
 $exitImg.on('click',function(){
+  $photoViewer.removeClass("unset");
   $photoViewer.animate({
     height: "0vh"
   },function() {
     $(this).hide();
     $nav_link_wrapper.fadeIn();
     $divGallery.fadeIn();
+
+    for (var i = 0; i < $galleryBody.children().length; i++) {
+      $galleryBody.children().remove();
+
+    }
   })
 
 })
 // once the x is clicked, the page comes  down and hides itself and show the nav and category selection
 
 
-$li.on('click',function() {
+
+function locationDisplay(location,body) {
+  var liStorage = [];
+ for(var i = 0; i <location.length; i++){
+
+  var $li = $('<li></li>').css({
+    display: 'inline-block'
+  });
+
+  var $img = $('<img></img>').attr("src",location[i]).addClass("imgSize");
+  $li.prepend($img);
+
+ liStorage.push($li);
+}
+
+for(var i = 0; i <liStorage.length; i++){
+
+  liStorage[i].appendTo($galleryBody).hide().delay().fadeIn();
+}
+console.log(liStorage);
+}
+
+
+
+var cityLocation = [];
+for (var i = 1; i < 19; i++) {
+   var cityImg = "images/City/city"+i+".jpg";
+   cityLocation.push(cityImg);
+}
+
+console.log(cityLocation);
+
+$liParent.children('.city').on('click',function(){
   $photoViewer.show().animate({
     height: "100vh"
+  },function(){
+    locationDisplay(cityLocation,$galleryBody);
+    $photoViewer.addClass("unset");
   })
+
+
 
 $nav_link_wrapper.fadeOut();
 $divGallery.fadeOut();
 })
-
-// on li click, the photo viewer animates in
-// continue on with the above code
-
-
-
-
-
-
-
 
 
 
@@ -124,18 +158,5 @@ $('h2.name').typeIt({
   callback: function(){}
  });
 
-
-})
-
-
-
-//
-//
-//
-//
-//angularJs
-
-var myModule = angular.module("module",[]);
-myModule.controller("controller",function($scope) {
 
 })
