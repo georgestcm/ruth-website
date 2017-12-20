@@ -186,3 +186,90 @@ div.exit_img {
   width: 32px;
   cursor: pointer;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width:1024px) {
+
+  div.entry_text {
+    position: fixed;
+    top: 35%;
+    left: 25%;
+    font-size: 80px;
+}
+
+}
+
+@media screen and (max-width:768px) {
+
+  div.entry_text {
+    position: fixed;
+    top: 35%;
+    left: 16%;
+    font-size: 80px;
+}
+
+}
+
+@media screen and (max-width:420px) {
+
+  div.entry_text {
+    position: fixed;
+    top: 39%;
+    left: 16%;
+    font-size: 40px;
+}
+
+div.home .entry_button {
+    position: fixed !important;
+    top: 70% !important;
+    left: 40% !important;
+}
+
+}
