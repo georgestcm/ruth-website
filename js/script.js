@@ -13,7 +13,8 @@ $(function(){
   var $exitImg = $('div.exit_img');
   var $body = $('body');
   var $galleryBody = $('div.photo_viewer_body');
-
+  var $photoViewerTitle = $('div.photo_viewer_title h3');
+  var $photoViewerLi =$('ul.photo_viewer_li');
   $entryBtn.on('click',function() {
     $entryBtn.hide();
     $img.fadeOut();
@@ -63,12 +64,13 @@ $exitImg.on('click',function(){
     height: "0vh"
   },function() {
     $(this).hide();
+
     $nav_link_wrapper.fadeIn();
     $divGallery.fadeIn();
 
-    for (var i = 0; i < $galleryBody.children().length; i++) {
-      $galleryBody.children().remove();
-
+    for (var i = 0; i < $photoViewerLi.children().length; i++) {
+      $photoViewerLi.children().remove();
+      $photoViewerTitle.empty();
     }
   })
 
@@ -77,14 +79,13 @@ $exitImg.on('click',function(){
 
 
 
-function locationDisplay(location,body) {
+function locationDisplay(location,body,text) {
+
+  $photoViewerTitle.append(text);
   var liStorage = [];
  for(var i = 0; i <location.length; i++){
 
-  var $li = $('<li></li>').css({
-    display: 'inline-block'
-  });
-
+  var $li = $('<li></li>').addClass("liPosition");
   var $img = $('<img></img>').attr("src",location[i]).addClass("imgSize");
   $li.prepend($img);
 
@@ -93,7 +94,7 @@ function locationDisplay(location,body) {
 
 for(var i = 0; i <liStorage.length; i++){
 
-  liStorage[i].appendTo($galleryBody).hide().delay().fadeIn();
+  liStorage[i].appendTo($photoViewerLi).hide().delay().fadeIn();
 }
 console.log(liStorage);
 }
@@ -109,10 +110,11 @@ for (var i = 1; i < 19; i++) {
 console.log(cityLocation);
 
 $liParent.children('.city').on('click',function(){
+  var text = "Flowers";
   $photoViewer.show().animate({
     height: "100vh"
   },function(){
-    locationDisplay(cityLocation,$galleryBody);
+    locationDisplay(cityLocation,$galleryBody,text);
     $photoViewer.addClass("unset");
   })
 
