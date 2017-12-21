@@ -127,9 +127,7 @@ $divGallery.fadeOut();
 
 var flowerLocation = [];
 
-for (var i = 1; i < ; i++) {
 
-}
 
 $liParent.children('.flower').on('click',function(){
   var text = "Flowers";
