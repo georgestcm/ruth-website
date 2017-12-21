@@ -5,15 +5,18 @@
 
 .unset {
   position: unset !important;
-  display: flex;
-  justify-content: center;
+
 }
 
 .imgSize {
   box-sizing: border-box;
   height: 220px;
   width: 200px;
-  margin: 0 16px 16px 0;
+  margin: 0 16px 16px 20px;
+}
+
+.liPosition {
+  display: inline-block;
 
 }
 
@@ -173,15 +176,26 @@ div.photo_viewer {
   width: 100vw;
 }
 
-div.photo_viewer_body {
+.photo_viewer_li {
 
 
+
+}
+
+.photo_viewer_title {
+    margin: 60px 0 60px 0;
+    text-align: center;
+}
+
+.photo_viewer_title h3 {
+  color: gray;
+  font-size: 20px;
 }
 
 div.exit_img {
   margin-top: 20px;
   position: fixed;
-  left: 96%;
+  left: 97%;
   height: 32px;
   width: 32px;
   cursor: pointer;
