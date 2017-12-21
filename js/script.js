@@ -58,6 +58,29 @@ $nav_link_wrapper.children('.third').on('click',function(e) {
 })
 //above are the nav control "what hides or show depending on what link is clicked"
 
+
+
+function locationDisplay(location,body,text) {
+
+  $photoViewerTitle.append(text);
+  var liStorage = [];
+ for(var i = 0; i <location.length; i++){
+
+  var $li = $('<li></li>').addClass("liPosition");
+  var $img = $('<img></img>').attr("src",location[i]).addClass("imgSize");
+  $li.prepend($img);
+
+ liStorage.push($li);
+}
+
+for(var i = 0; i <liStorage.length; i++){
+
+  liStorage[i].appendTo($photoViewerLi).hide().delay().fadeIn();
+}
+}
+// abov is the function the shows the pictures on the screen
+
+
 $exitImg.on('click',function(){
   $photoViewer.removeClass("unset");
   $photoViewer.animate({
@@ -79,35 +102,78 @@ $exitImg.on('click',function(){
 
 
 
-function locationDisplay(location,body,text) {
-
-  $photoViewerTitle.append(text);
-  var liStorage = [];
- for(var i = 0; i <location.length; i++){
-
-  var $li = $('<li></li>').addClass("liPosition");
-  var $img = $('<img></img>').attr("src",location[i]).addClass("imgSize");
-  $li.prepend($img);
-
- liStorage.push($li);
-}
-
-for(var i = 0; i <liStorage.length; i++){
-
-  liStorage[i].appendTo($photoViewerLi).hide().delay().fadeIn();
-}
-console.log(liStorage);
-}
-
-
-
 var cityLocation = [];
 for (var i = 1; i < 19; i++) {
    var cityImg = "images/City/city"+i+".jpg";
    cityLocation.push(cityImg);
 }
 
-console.log(cityLocation);
+$liParent.children('.city').on('click',function(){
+  var text = "City";
+  $photoViewer.show().animate({
+    height: "100vh"
+  },function(){
+    locationDisplay(cityLocation,$galleryBody,text);
+    $photoViewer.addClass("unset");
+  })
+
+
+
+$nav_link_wrapper.fadeOut();
+$divGallery.fadeOut();
+})
+// above is for the city images
+
+
+var flowerLocation = [];
+
+for (var i = 1; i < ; i++) {
+
+}
+
+$liParent.children('.flower').on('click',function(){
+  var text = "Flowers";
+  $photoViewer.show().animate({
+    height: "100vh"
+  },function(){
+    locationDisplay(flowerLocation,$galleryBody,text);
+    $photoViewer.addClass("unset");
+  })
+
+
+
+$nav_link_wrapper.fadeOut();
+$divGallery.fadeOut();
+})
+// above is for the flower
+
+
+
+
+
+$liParent.children('.sky').on('click',function(){
+  var text = "Sky";
+  $photoViewer.show().animate({
+    height: "100vh"
+  },function(){
+    locationDisplay(cityLocation,$galleryBody,text);
+    $photoViewer.addClass("unset");
+  })
+
+
+
+$nav_link_wrapper.fadeOut();
+$divGallery.fadeOut();
+})
+
+//above is for the sky
+
+
+
+
+
+
+
 
 $liParent.children('.city').on('click',function(){
   var text = "Flowers";
@@ -124,14 +190,7 @@ $nav_link_wrapper.fadeOut();
 $divGallery.fadeOut();
 })
 
-
-
-
-
-
-
-
-
+//above is for the extra
 
 
 
