@@ -10,9 +10,10 @@
 
 .imgSize {
   box-sizing: border-box;
-  height: 220px;
-  width: 200px;
-  margin: 0 16px 16px 20px;
+  height: 200px;
+  width: 180px;
+  margin: 0 21px 16px 20px;
+  border-radius: 6px;
 }
 
 .liPosition {
@@ -102,14 +103,16 @@ div.About_section h2 {
 
 div.about_section_main p {
   width: 50%;
+  margin-left: 120px;
+  margin-right: 104px;
+  margin-top: 50px;
 }
 
 img[src="images/ruthPicture.JPG"]{
  border-radius: 50%;
   height: 200px;
   width: 200px;
-  position: relative;
-  left: 20pxl
+
 }
 
 img[src="images/cancel.png"] {
@@ -201,19 +204,109 @@ div.exit_img {
   cursor: pointer;
 }
 
+.contact_social.media {
+    position: fixed;
+    top: 46%;
+    left: 40%;
+}
+
+a.social_media_link {
+    margin-left: 28px;
+}
+
+.about_section_main {
+    display: inline-flex;
+}
 
 
+@media screen and (max-width:1024px){
+  .gallery_section_body li {
+    left: 8%;
+
+}
+
+div.gallary_header {
+    left: 39%;
+}
+}
+
+@media screen and (max-width:768px){
+  div.about_section_main p {
+    margin-left: 82px;
+    margin-right: 94px;
+}
+
+img[src="images/ruthPicture.JPG"] {
+    margin-right: 75px;
+    margin-top: 37px;
+}
+
+div.gallary_header {
+    left: 36%;
+}
+
+.contact_social.media {
+    left: 35%;
+}
+
+}
+
+@media screen and (max-width: 420px){
+  div.nav {
+     position: unset;
+     }
+
+     .about_section_main {
+         display: unset;
+     }
 
 
+   div.about_section_main p {
+       margin-left: 0;
+       margin-right: 0;
+       width: unset;
+   }
 
+   img[src="images/ruthPicture.JPG"] {
+    margin-left: 61px;
+}
 
+div.gallery_section {
+    position: relative;
+    top: 57px;
+}
 
+div.gallary_header {
+     position: unset;
+     text-align: center;
 
+}
 
+.gallery_section_body li {
+    left: 23%;
+}
 
+.gallery_section_body li {
+    margin: 49px 20px 0 0;
+}
 
+.contact_social.media {
+    left: 23%;
+}
+div.About_section {
+    top: 42px;
+}
 
+}
 
+@media screen and (max-width:360px){
+  div.nav .nav_link_wrapper {
+    margin-left: 13px;
+    margin-top: 22px;
+    font-size: 0px;
+}
+
+}
 
 
 
