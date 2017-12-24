@@ -16,6 +16,11 @@
   border-radius: 6px;
 }
 
+.enlarge {
+  height: 400px;
+  width: 400px;
+}
+
 .liPosition {
   display: inline-block;
 
@@ -197,8 +202,9 @@ div.photo_viewer {
 
 div.exit_img {
   margin-top: 20px;
-  position: fixed;
-  left: 97%;
+  position: relative;
+  left: 95%;
+  top: 10%;
   height: 32px;
   width: 32px;
   cursor: pointer;
