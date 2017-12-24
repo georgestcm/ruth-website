@@ -61,22 +61,17 @@ $nav_link_wrapper.children('.third').on('click',function(e) {
 
 
 function locationDisplay(location,body,text) {
+     $photoViewerTitle.append(text);
+      var liStorage = [];
+   for(var i = 0; i <location.length; i++){
+      var $li = $('<li></li>').addClass("liPosition");
+      var $img = $('<img></img>').attr("src",location[i]).addClass("imgSize");
+      $li.prepend($img);
+      liStorage.push($li);
+    }
+  for(var i = 0; i <liStorage.length; i++){
+      liStorage[i].appendTo($photoViewerLi).hide().delay().fadeIn();  }
 
-  $photoViewerTitle.append(text);
-  var liStorage = [];
- for(var i = 0; i <location.length; i++){
-
-  var $li = $('<li></li>').addClass("liPosition");
-  var $img = $('<img></img>').attr("src",location[i]).addClass("imgSize");
-  $li.prepend($img);
-
- liStorage.push($li);
-}
-
-for(var i = 0; i <liStorage.length; i++){
-
-  liStorage[i].appendTo($photoViewerLi).hide().delay().fadeIn();
-}
 }
 // abov is the function the shows the pictures on the screen
 
@@ -85,15 +80,14 @@ $exitImg.on('click',function(){
   $photoViewer.removeClass("unset");
   $photoViewer.animate({
     height: "0vh"
-  },function() {
+  },function(){
     $(this).hide();
 
     $nav_link_wrapper.fadeIn();
     $divGallery.fadeIn();
-
+    $photoViewerTitle.empty();
     for (var i = 0; i < $photoViewerLi.children().length; i++) {
       $photoViewerLi.children().remove();
-      $photoViewerTitle.empty();
     }
   })
 
@@ -114,10 +108,8 @@ $liParent.children('.city').on('click',function(){
     height: "100vh"
   },function(){
     locationDisplay(cityLocation,$galleryBody,text);
-    $photoViewer.addClass("unset");
+  $photoViewer.addClass("unset");
   })
-
-
 
 $nav_link_wrapper.fadeOut();
 $divGallery.fadeOut();
@@ -125,10 +117,8 @@ $divGallery.fadeOut();
 // above is for the city images
 
 
+
 var flowerLocation = [];
-
-
-
 $liParent.children('.flower').on('click',function(){
   var text = "Flowers";
   $photoViewer.show().animate({
@@ -138,8 +128,6 @@ $liParent.children('.flower').on('click',function(){
     $photoViewer.addClass("unset");
   })
 
-
-
 $nav_link_wrapper.fadeOut();
 $divGallery.fadeOut();
 })
@@ -148,17 +136,15 @@ $divGallery.fadeOut();
 
 
 
-
+var skyLocation = [];
 $liParent.children('.sky').on('click',function(){
   var text = "Sky";
   $photoViewer.show().animate({
     height: "100vh"
   },function(){
-    locationDisplay(cityLocation,$galleryBody,text);
+    locationDisplay(skyLocation,$galleryBody,text);
     $photoViewer.addClass("unset");
   })
-
-
 
 $nav_link_wrapper.fadeOut();
 $divGallery.fadeOut();
@@ -172,17 +158,15 @@ $divGallery.fadeOut();
 
 
 
-
-$liParent.children('.city').on('click',function(){
-  var text = "Flowers";
+var extraLocation = [];
+$liParent.children('.extra').on('click',function(){
+  var text = "Extras";
   $photoViewer.show().animate({
     height: "100vh"
   },function(){
-    locationDisplay(cityLocation,$galleryBody,text);
+    locationDisplay(extraLocation,$galleryBody,text);
     $photoViewer.addClass("unset");
   })
-
-
 
 $nav_link_wrapper.fadeOut();
 $divGallery.fadeOut();
