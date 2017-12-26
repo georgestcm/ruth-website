@@ -119,6 +119,11 @@ $divGallery.fadeOut();
 
 
 var flowerLocation = [];
+
+for(var i = 1; i < 17; i++){
+  var flowerImg = "images/Flowers/flower"+i+".jpg";
+  flowerLocation.push(flowerImg)
+}
 $liParent.children('.flower').on('click',function(){
   var text = "Flowers";
   $photoViewer.show().animate({
@@ -137,6 +142,10 @@ $divGallery.fadeOut();
 
 
 var skyLocation = [];
+for (var i = 1; i < 8; i++) {
+ var skyImg = "images/Sky/sky"+i+".jpg";
+ skyLocation.push(skyImg);
+}
 $liParent.children('.sky').on('click',function(){
   var text = "Sky";
   $photoViewer.show().animate({
@@ -159,6 +168,10 @@ $divGallery.fadeOut();
 
 
 var extraLocation = [];
+for (var i = 1; i < 6; i++) {
+ var skyImg = "images/Misc/m"+i+".jpg";
+ extraLocation.push(skyImg);
+}
 $liParent.children('.extra').on('click',function(){
   var text = "Extras";
   $photoViewer.show().animate({
