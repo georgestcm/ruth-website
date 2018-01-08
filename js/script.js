@@ -70,9 +70,16 @@ function locationDisplay(location,body,text) {
       liStorage.push($li);
     }
   for(var i = 0; i <liStorage.length; i++){
-      liStorage[i].appendTo($photoViewerLi).hide().delay().fadeIn();  }
+      liStorage[i].appendTo($photoViewerLi).hide();
+      if($photoViewerLi.children().length == liStorage.length){
+        for(var i = 0; i < $photoViewerLi.children().length; i++){
+          liStorage[i].delay(i*200).fadeIn(850);
+        }
+      }
 
+      };
 }
+
 // abov is the function the shows the pictures on the screen
 
 
