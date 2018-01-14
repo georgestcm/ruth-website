@@ -15,6 +15,9 @@ $(function(){
   var $galleryBody = $('div.photo_viewer_body');
   var $photoViewerTitle = $('div.photo_viewer_title h3');
   var $photoViewerLi =$('ul.photo_viewer_li');
+  var $modal = $(".modal")[0];
+  var $modalClose = $(".close");
+  var $modalImg = $("img#modal_img")[0];
   $entryBtn.on('click',function() {
     $entryBtn.hide();
     $img.fadeOut();
@@ -58,14 +61,12 @@ $nav_link_wrapper.children('.third').on('click',function(e) {
 })
 //above are the nav control "what hides or show depending on what link is clicked"
 
-
-
 function locationDisplay(location,body,text) {
      $photoViewerTitle.append(text);
       var liStorage = [];
    for(var i = 0; i <location.length; i++){
       var $li = $('<li></li>').addClass("liPosition");
-      var $img = $('<img></img>').attr("src",location[i]).addClass("imgSize");
+      var $img = $('<img></img>').attr("src",location[i]).addClass("imgSize images");
       $li.prepend($img);
       liStorage.push($li);
     }
@@ -76,12 +77,11 @@ function locationDisplay(location,body,text) {
           liStorage[i].delay(i*200).fadeIn(850);
         }
       }
-
       };
+
 }
 
 // abov is the function the shows the pictures on the screen
-
 
 $exitImg.on('click',function(){
   $photoViewer.removeClass("unset");
@@ -100,8 +100,6 @@ $exitImg.on('click',function(){
 
 })
 // once the x is clicked, the page comes  down and hides itself and show the nav and category selection
-
-
 
 var cityLocation = [];
 for (var i = 1; i < 19; i++) {
@@ -123,8 +121,6 @@ $divGallery.fadeOut();
 })
 // above is for the city images
 
-
-
 var flowerLocation = [];
 
 for(var i = 1; i < 17; i++){
@@ -144,9 +140,6 @@ $nav_link_wrapper.fadeOut();
 $divGallery.fadeOut();
 })
 // above is for the flower
-
-
-
 
 var skyLocation = [];
 for (var i = 1; i < 8; i++) {
@@ -168,12 +161,6 @@ $divGallery.fadeOut();
 
 //above is for the sky
 
-
-
-
-
-
-
 var extraLocation = [];
 for (var i = 1; i < 6; i++) {
  var skyImg = "images/Misc/m"+i+".jpg";
@@ -191,18 +178,22 @@ $liParent.children('.extra').on('click',function(){
 $nav_link_wrapper.fadeOut();
 $divGallery.fadeOut();
 })
+// above is for the extra images
 
-//above is for the extra
+$photoViewerLi.on("click",function(e){
+if(e.target.nodeName == "IMG"){
+  $modal.style.display = "block";
+  $photoViewer.removeClass('unset');
+  var $img = e.target.currentSrc;
+  $modalImg.src = $img;
+}
+})
 
 
-
-
-
-
-
-
-
-
+$modalClose.on("click",function(){
+  $modal.style.display = "none";
+  $photoViewer.addClass("unset");
+})
 
 
 $('h2.name').typeIt({
