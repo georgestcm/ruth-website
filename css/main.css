@@ -328,6 +328,14 @@ div.gallary_header {
     width: 100%;
 }
 
+div.entry_text {
+  position: fixed;
+  top: 35%;
+  left: 16%;
+  font-size: 80px;
+}
+
+
 }
 
 @media screen and (max-width: 420px){
@@ -386,6 +394,10 @@ div.exit_img {
   width: 357px;
   margin-left: 29px;
 }
+
+ul.gallery_section_body {
+    padding-bottom: 27px;
+}
 }
 
 @media screen and (max-width:360px){
@@ -421,17 +433,6 @@ div.exit_img {
       width: 306px;
       margin-left: 32px;
   }
-}
-
-@media screen and (max-width:768px) {
-
-  div.entry_text {
-    position: fixed;
-    top: 35%;
-    left: 16%;
-    font-size: 80px;
-}
-
 }
 
 @media screen and (max-width:420px) {
