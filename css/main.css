@@ -18,6 +18,11 @@
   cursor: pointer;
 }
 
+
+img#modal_img {
+    margin-bottom: 150px;
+}
+
 .enlarge {
   height: 400px;
   width: 400px;
@@ -192,7 +197,7 @@ a.social_media_link {
     display: none;
     position: fixed;
     z-index: 1;
-    padding-top: 100px;
+    padding-top: 80px;
     left: 0;
     top: 0;
     width: 100%;
